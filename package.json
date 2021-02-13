@@ -1,0 +1,36 @@
+{
+    "name": "borak-whatsapp-server",
+    "version": "1.0.0",
+    "description": "Whatsapp Web by Mailboy",
+    "author": "zealios <zealios@gmail.com>",
+    "scripts": {
+        "setup": "npm install -g pm2",
+        "test": "node borak-whatsapp-server.js --phone 60107657168 --license 230781F1-C909401F-8C4EDF17-045C48B4 --router http://localhost:3030",
+        "start-test": "pm2 start --name borak-whatsapp-server-test -o logs/out.log -e logs/error.log borak-whatsapp-server.js -- --phone 16154996391 --router http://localhost:3030",
+        "stop-test": "pm2 stop borak-whatsapp-server-test",
+        "start-experiment": "pm2 start --name borak-whatsapp-server-experiment -o logs/out.log -e logs/error.log borak-whatsapp-server-experiment.js -- --phone 60107657168 --license 230781F1-C909401F-8C4EDF17-045C48B4 --router http://localhost:3030",
+        "stop-experiment": "pm2 stop borak-whatsapp-server-experiment",
+        "start-staging": "pm2 start --name borak-whatsapp-server-staging -o logs/out.log -e logs/error.log borak-whatsapp-server.js -- --phone 14104976543 --license BEB0F678-FFB244E3-9B1A82EF-414697D7 --router http://localhost:3030",
+        "stop-staging": "pm2 stop borak-whatsapp-server-staging",
+        "restart-staging": "pm2 restart borak-whatsapp-server-staging",
+        "start-mailboy": "pm2 start --name borak-whatsapp-server-mailboy -o logs/out.log -e logs/error.log borak-whatsapp-server.js -- --phone 1814777880 --license A223143F-88754609-81B80C81-E5F62AA8 --router http://localhost:3030",
+        "stop-mailboy": "pm2 stop borak-whatsapp-server-mailboy",
+        "restart-mailboy": "pm2 restart borak-whatsapp-server-mailboy"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "dependencies": {
+        "@open-wa/wa-automate": "^3.4.1",
+        "async": "^3.2.0",
+        "mime-types": "^2.1.27",
+        "sharp": "^0.27.1",
+        "socket.io-client": "^2.3.0"
+    },
+    "devDependencies": {},
+    "optionalDependencies": {}
+}
